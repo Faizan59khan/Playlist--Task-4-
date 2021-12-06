@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist</title>
+    <link rel="stylesheet" href="./sass/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Hind+Siliguri:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+
+    <div class="main-container">
+    
+    
+        <div class="header">
+    
+            <div class="logo"><i class="fa-solid fa-headphones"></i>
+                <h1>Playlist</h1>
+            </div>
+    
+            <div class="search">
+                <input type="text" id="youtube-title" placeholder="Type a title of video" />
+                <input type="text" id="youtube-url" placeholder="Paste the youtube or vimeo link" />
+    
+                <button class="btn-wide btn-normal" onclick="addUrl()">Add</button>
+            </div>
+    
+    
+    
+            <label class="toggle-control">
+                <input type="checkbox" checked="checked" onclick="themeChange()">
+                <span class="control"></span>
+            </label>
+    
+    
+    
+        </div>
+    
+        <div class="video-player">
+    
+            <div class="player">
+    
+                <iframe width="900" height="500" id="video" title="YouTube video player"
+                    src="https://www.youtube.com/embed/hdI2bqOjy3c?autoplay=1&mute=1" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+    
+    
+                 <hr style="width: 95%; margin: .7em;"/>
+    
+    
+                <div class="title">JavaScript
+                    <a href="https://en.savefrom.net/65/" target="_blank"><button
+                            class="btn-wide btn-normal">Download</button></a>
+                </div>
+            </div>
+    
+            <div class="playlist" onclick="playVideo()">
+                <h1>Your Favourites</h1>
+            </div>
+    
+    
+        </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+    
+    <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+/* VARIABLES */
+/* ====================Mixin================ */
+/* ================Global CSS=================== */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Architects Daughter", "sans-serif", cursive;
+}
+
+body {
+  color: white;
+  background: #333333;
+}
+
+/* ===========reset====================== */
+h1 {
+  padding: 0;
+  margin: 0;
+}
+
+button, img, i {
+  cursor: pointer;
+}
+
+/* ===================== Header =================== */
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.header .logo {
+  margin: 1.2rem;
+  margin-left: 5rem;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.header .logo i {
+  font-size: 35px;
+}
+
+.header .logo h1 {
+  display: inline-block;
+  padding: .2em;
+}
+
+.header .search {
+  margin: 1.6em;
+  margin-left: 6rem;
+}
+
+input[type="text"]:first-child {
+  border-radius: 50px;
+  outline: none;
+  border: none;
+  -webkit-box-shadow: inset 3px 3px 7px rgba(136, 165, 191, 0.48), inset -3px -3px 7px #ffffff;
+          box-shadow: inset 3px 3px 7px rgba(136, 165, 191, 0.48), inset -3px -3px 7px #ffffff;
+  height: 2.7rem;
+  text-align: center;
+  font-size: 1em;
+  font-family: sans-serif;
+  width: 20vw;
+}
+
+#youtube-url {
+  border-radius: 50px;
+  outline: none;
+  border: none;
+  -webkit-box-shadow: inset 3px 3px 7px rgba(136, 165, 191, 0.48), inset -3px -3px 7px #ffffff;
+          box-shadow: inset 3px 3px 7px rgba(136, 165, 191, 0.48), inset -3px -3px 7px #ffffff;
+  height: 2.7rem;
+  text-align: center;
+  font-size: 1em;
+  font-family: sans-serif;
+  width: 30vw;
+}
+
+.btn-wide {
+  width: 120px;
+  height: 2.5rem;
+  margin: 10px;
+  border-radius: 50px;
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+}
+
+.btn-normal {
+  -webkit-box-shadow: -3px -3px 7px #666666, 3px 3px 7px #595959;
+          box-shadow: -3px -3px 7px #666666, 3px 3px 7px #595959;
+}
+
+.btn-normal:active {
+  -webkit-box-shadow: -3px -3px 7px #666666 inset, 3px 3px 7px #bbc3cc inset;
+          box-shadow: -3px -3px 7px #666666 inset, 3px 3px 7px #bbc3cc inset;
+}
+
+/* Toggle */
+.toggle-control {
+  display: block;
+  position: relative;
+  top: 1.8rem;
+  cursor: pointer;
+  font-size: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-box-shadow: inset 3px 3px 7px rgba(136, 165, 191, 0.48), inset -3px -3px 7px #ffffff;
+          box-shadow: inset 3px 3px 7px rgba(136, 165, 191, 0.48), inset -3px -3px 7px #ffffff;
+}
+
+.toggle-control input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.toggle-control input:checked ~ .control {
+  background-color: white;
+}
+
+.toggle-control input:checked ~ .control::before {
+  background: white;
+  left: 40px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.toggle-control input:checked ~ .control::after {
+  background: #333333;
+  left: 50px;
+}
+
+.toggle-control .control {
+  position: absolute;
+  top: .5rem;
+  left: 0;
+  height: 35px;
+  width: 80px;
+  border-radius: 17.5px;
+  background-color: #333333;
+  -webkit-transition: background-color 0.125s ease-in;
+  transition: background-color 0.125s ease-in;
+}
+
+.toggle-control .control::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 0px;
+  top: 0px;
+  border-radius: 50%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  background: #333333;
+  z-index: 5;
+  -webkit-transition: all 0.125s ease-in;
+  transition: all 0.125s ease-in;
+}
+
+.toggle-control .control::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 17.5px;
+  background: white;
+  -webkit-transition: all 0.125s ease-in;
+  transition: all 0.125s ease-in;
+}
+
+/*============================= Video player ==================================*/
+.video-player {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: auto;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 3rem;
+  padding: 2rem;
+  background: #4d4d4d;
+  border-radius: 5px;
+}
+
+.player .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 2.4rem;
+  font-family: sans-serif;
+  padding: .5em;
+}
+
+.player .title a {
+  margin-top: -.5rem;
+}
+
+.playlist {
+  width: 350px;
+  background: #333333;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 19px 38px #666666, 0 15px 12px #595959;
+          box-shadow: 0 19px 38px #666666, 0 15px 12px #595959;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.playlist .playlist-item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40px 170px 50px;
+      grid-template-columns: 40px 170px 50px;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  cursor: pointer;
+  font-size: 1.4rem;
+  margin-top: 1em;
+  padding: .3rem;
+}
+
+.playlist-item:hover {
+  background: white;
+  color: #333333;
+  border-radius: 50px;
+}
+
+.playlist-item i:hover {
+  color: red;
+}
+
+/*=================== MEDIA QUERIES ==================================*/
+@media only screen and (max-width: 1100px) {
+  .header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+  }
+  .logo {
+    padding: 10px;
+    width: 250px !important;
+    margin: 0 auto !important;
+  }
+  input {
+    width: 100% !important;
+    margin: 5px;
+  }
+  .search {
+    margin: .8em;
+    margin-left: 0 !important;
+    padding: 4em !important;
+  }
+  .btn-wide {
+    width: 98%;
+  }
+  #video {
+    width: 650px;
+    height: 500px;
+  }
+  .toggle-control {
+    top: -75px;
+    left: 28rem;
+  }
+  .video-player {
+    margin: 5px;
+    padding: 1rem;
+    text-align: center;
+  }
+  .player .title {
+    font-size: 2rem;
+    padding: 5px;
+  }
+  .playlist {
+    width: 100%;
+    padding: 2em;
+  }
+  .playlist .playlist-item {
+    padding: 10px;
+    margin-top: 1em;
+    -ms-grid-columns: 50px 500px 50px;
+        grid-template-columns: 50px 500px 50px;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+  }
+  .player .title {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-size: 2rem;
+    padding: .3em;
+  }
+  .player .title a {
+    margin-top: 5px;
+  }
+  hr {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 775px) {
+  .toggle-control {
+    top: -50px;
+    left: 340px;
+  }
+  #video {
+    width: 600px;
+    height: 460px;
+  }
+  a {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  .toggle-control {
+    top: -70px;
+    left: 230px;
+  }
+  #video {
+    width: 500px;
+    height: 400px;
+  }
+  .playlist {
+    width: 500x;
+    padding: 2em;
+  }
+  .playlist .playlist-item {
+    padding: 10px;
+    margin-top: 1em;
+    -ms-grid-columns: 50px 300px 50px;
+        grid-template-columns: 50px 300px 50px;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .toggle-control {
+    top: -80px;
+    left: 200px;
+  }
+  #video {
+    width: 300px;
+    height: 200px;
+  }
+  .playlist {
+    width: 400x;
+    padding: 2em;
+  }
+  .playlist .playlist-item {
+    padding: 10px;
+    margin-top: 1em;
+    -ms-grid-columns: 30px 200px 30px;
+        grid-template-columns: 30px 200px 30px;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+  }
+}
+
+/* For Mobile */
+@media only screen and (max-width: 375px) {
+  .btn-wide {
+    margin-left: .8rem;
+    width: 95%;
+  }
+  #video {
+    width: 330px;
+    height: 250px;
+  }
+  .toggle-control {
+    top: -50px;
+    left: 140px;
+  }
+  .video-player {
+    margin: 5px;
+    padding: 1rem;
+    text-align: center;
+  }
+  .player .title {
+    font-size: 2rem;
+    padding: 5px;
+  }
+  .playlist {
+    width: 100%;
+    padding: 1.2em;
+    text-align: left;
+  }
+  .playlist .playlist-item {
+    padding: 8px;
+    margin-top: 4px;
+    text-align: center;
+    font-size: 1rem;
+    -ms-grid-columns: 20px 170px 30px;
+        grid-template-columns: 20px 170px 30px;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+  }
+}
+/*# sourceMappingURL=style.css.map */

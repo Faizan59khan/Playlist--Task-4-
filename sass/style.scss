@@ -1,0 +1,473 @@
+/* VARIABLES */
+$myFont: 'Stardos Stencil', cursive,'Hind Siliguri', sans-serif;
+$darkColor:hsl(0, 0%, 20%);
+$lightColor: hsl(0, 0%, 100%);
+$lightDark: hsl(0, 0%, 30%);
+$btnInsetshadow:  inset 3px 3px 7px rgba(136, 165, 191, 0.48),
+inset -3px -3px 7px #ffffff;
+$btnOuterShadow: 4px 2px 16px rgba(136, 165, 191, 0.48),
+    -4px -2px 16px #ffffff;
+$btnCheckedIconShadow: 1px 1px 1px rgba(214, 225, 239, 0.6), 0 0 0 #000,
+    1px 1px 1px rgba(214, 225, 239, 0);
+$font: 'Architects Daughter', 'sans-serif' ,cursive;
+
+
+/* ====================Mixin================ */
+@mixin inputStyle{
+
+  border-radius: 50px;
+  outline: none;
+  border: none;
+  box-shadow: $btnInsetshadow;
+  height: 2.7rem;
+  text-align: center;
+  font-size: 1em;
+  font-family: sans-serif;
+}
+
+/* ================Global CSS=================== */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font;
+}
+body{
+  color: $lightColor;
+  background: $darkColor;
+}
+
+/* ===========reset====================== */
+h1{
+  padding: 0;
+  margin: 0;
+}
+button,img,i{
+  cursor: pointer;
+}
+
+/* ===================== Header =================== */
+
+.header{
+  display: flex;
+  flex-wrap: wrap;
+ .logo{
+ 
+   margin: 1.2rem;
+   margin-left: 5rem;
+   font-size: 20px;
+   cursor: pointer;
+   i{
+     font-size: 35px;  
+   }
+   h1{
+     display: inline-block;
+     padding: .2em;
+   }
+}
+
+.search{
+  margin: 1.6em;
+  margin-left: 6rem;
+}
+}
+
+input[type="text"]:first-child{
+    
+ @include inputStyle;
+ width: 20vw;
+
+}
+#youtube-url{
+  @include inputStyle;
+    width: 30vw;
+}
+
+.btn-wide {
+  width: 120px;
+  height: 2.5rem;
+  margin: 10px;
+  border-radius: 50px;
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+}
+
+.btn-normal {
+  box-shadow: -3px -3px 7px hsl(0, 0%, 40%), 3px 3px 7px hsl(0, 0%, 35%);
+}
+
+.btn-normal:active {
+  box-shadow: -3px -3px 7px hsl(0, 0%, 40%) inset, 3px 3px 7px #bbc3cc inset;  
+}
+
+
+/* Toggle */
+$toggle-background-color-on: $lightColor;
+$toggle-background-color-off: $darkColor;
+$toggle-control-color: $lightColor;
+$toggle-width: 80px;
+$toggle-height: 35px;
+$toggle-gutter: 5px;
+$toggle-radius: 50%;
+$toggle-control-speed: .125s;
+$toggle-control-ease: ease-in;
+
+// These are our computed variables
+// change at your own risk.
+$toggle-radius: $toggle-height / 2;
+$toggle-control-size: $toggle-height - ($toggle-gutter * 2);
+
+
+.toggle-control {
+  display: block;
+  position: relative;
+  top: 1.8rem;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+  box-shadow: $btnInsetshadow;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  input:checked ~ .control {
+    background-color: $toggle-background-color-on;
+    
+    &::before {
+      background: $toggle-background-color-on;
+      left: $toggle-width - ($toggle-control-size * 1.4) - $toggle-gutter;
+      transform: scale(1);
+    }
+    
+    &::after {
+      background: $darkColor;
+      left: $toggle-width - $toggle-control-size - $toggle-gutter;
+    }
+  }
+
+  .control {
+    position: absolute;
+    top: .5rem;
+    left: 0;
+    height: $toggle-height;
+    width: $toggle-width;
+    border-radius: $toggle-radius;
+    background-color: $toggle-background-color-off;
+    transition: background-color $toggle-control-speed $toggle-control-ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: $toggle-control-size / 1;
+      height: $toggle-control-size / 1;
+      left: 0px;
+      top: 0px;
+      border-radius: 50%;
+      
+      transform: scale(0);
+      
+      background: $toggle-background-color-off;
+      z-index: 5;
+      
+      transition: all $toggle-control-speed $toggle-control-ease;
+    }
+    
+    &::after {
+      content: "";
+      position: absolute;
+      left: $toggle-gutter;
+      top: $toggle-gutter;
+      width: $toggle-control-size;
+      height: $toggle-control-size;
+      border-radius: $toggle-radius;
+      background: $lightColor;
+      transition: all $toggle-control-speed $toggle-control-ease;
+    }
+  }
+}
+
+
+
+
+
+
+/*============================= Video player ==================================*/
+
+.video-player{
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  justify-content: space-around;
+  margin: 3rem;
+  padding: 2rem;
+  background: $lightDark;
+  border-radius: 5px;
+}
+
+
+.player{
+ 
+   .title{
+     display: flex;
+     justify-content: space-between;
+     font-size: 2.4rem;
+     font-family: sans-serif;
+     padding: .5em;
+
+     a{
+       margin-top: -.5rem;
+     }
+   }
+}
+
+.playlist{
+  width: 350px;
+  background: $darkColor;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 19px 38px hsl(0, 0%, 40%), 0 15px 12px hsl(0, 0%, 35%);
+  max-height: 500px;
+  overflow-y: auto;
+.playlist-item{
+   display: grid;
+   grid-template-columns: 40px 170px 50px;
+   grid-template-rows: auto;
+   cursor: pointer;
+   font-size: 1.4rem;
+   margin-top: 1em;
+   padding: .3rem;
+}
+}
+
+.playlist-item:hover{
+
+  background: $lightColor;
+  color: $darkColor;
+  border-radius: 50px;
+}
+.playlist-item i:hover{
+     color: red;
+}
+
+
+
+
+  /*=================== MEDIA QUERIES ==================================*/  
+  @media only screen and (max-width: 1100px){
+
+    .header{
+      flex-direction: column;
+      height: auto;
+    }
+    .logo{
+     padding: 10px;
+     width: 250px !important;
+     margin: 0 auto !important;
+   }
+    
+    input{
+      width: 100% !important;
+      margin: 5px;
+    }
+    .search{
+      margin: .8em;
+      margin-left: 0 !important;
+      padding: 4em !important;
+    }
+
+    .btn-wide {
+      width: 98%;
+    }
+    #video{
+      width: 650px;
+      height: 500px;
+    }
+
+
+    .toggle-control {
+       top: -75px;
+       left: 28rem;
+    }
+
+
+    .video-player{
+     
+      margin: 5px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .player{
+     
+       .title{
+         font-size: 2rem;
+         padding: 5px;
+       }
+    }
+    
+    
+    .playlist{
+      width: 100%;
+      padding: 2em;
+    
+    
+    .playlist-item{
+     
+       padding: 10px;
+       margin-top: 1em;
+       grid-template-columns: 50px 500px 50px;
+       grid-template-rows: auto;
+    
+    }
+    }
+
+    .player{
+ 
+      .title{
+         flex-direction: column;
+        font-size: 2rem;
+        padding: .3em;
+        a{
+          margin-top: 5px;
+        }
+      }
+   }
+   hr{
+    display: none;
+  }
+  }
+
+  @media only screen and (max-width: 775px){
+
+    .toggle-control {
+      top: -50px;
+      left: 340px;
+    }
+    #video{
+      width: 600px;
+      height: 460px;
+    }
+    a{
+      margin-top: 0;
+    }
+    
+  }
+
+  @media only screen and (max-width: 630px){
+
+    .toggle-control {
+      top: -70px;
+      left: 230px;
+    }
+     
+    #video{
+      width: 500px;
+      height: 400px;
+    }
+  
+       
+    .playlist{
+      width: 500x;
+      padding: 2em;
+    
+    
+    .playlist-item{
+     
+       padding: 10px;
+       margin-top: 1em;
+       grid-template-columns: 50px 300px 50px;
+       grid-template-rows: auto;
+    
+    }
+    }
+  }
+  @media only screen and (max-width: 540px){
+
+    .toggle-control {
+      top: -80px;
+      left: 200px;
+    }
+     
+    #video{
+      width: 300px;
+      height: 200px;
+    }
+    .playlist{
+      width: 400x;
+      padding: 2em;
+    
+    
+    .playlist-item{
+     
+       padding: 10px;
+       margin-top: 1em;
+       grid-template-columns: 30px 200px 30px;
+       grid-template-rows: auto;
+    
+    }
+    }
+  
+  }
+
+/* For Mobile */
+  @media only screen and (max-width: 375px){
+
+  
+
+    .btn-wide {
+      margin-left: .8rem;
+      width: 95%;
+    }
+    #video{
+      width: 330px;
+      height: 250px;
+    }
+
+
+    .toggle-control {
+      top: -50px;
+      left: 140px;
+    }
+
+
+    .video-player{
+     
+      margin: 5px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .player{
+     
+       .title{
+         font-size: 2rem;
+         padding: 5px;
+        
+       }
+    }
+    
+    
+    .playlist{
+      width: 100%;
+      padding: 1.2em;
+      text-align: left;
+    
+    .playlist-item{
+     
+       padding: 8px;
+       margin-top: 4px;
+       text-align: center;
+       font-size: 1rem;
+       grid-template-columns: 20px 170px 30px;
+       grid-template-rows: auto;
+    
+    }
+    }
+  }
