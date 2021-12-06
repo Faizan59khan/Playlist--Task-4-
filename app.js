@@ -123,7 +123,9 @@ function embedUrl(urlValue){
     let len= urlValue.length;
     let url;
 
-    if(urlValue.includes("https://www.youtube.com/")){                     //youtube videos 
+    //like youtube or vimeo we can add more video site url we just need to design the logic a/c to its url.
+    
+    if(urlValue.includes("youtube.com")){                     //youtube videos 
          url = urlValue.slice(0,24).concat(`embed/${urlValue.slice(32,len)}?autoplay=1&mute=1`);
          console.log(url)
     }
@@ -203,9 +205,9 @@ function playVideo(){
             var nItem=nextItem;
     
     
-            console.log("itemId"+itemId);
-            console.log("nextItem"+nextItem);
-            console.log("item"+nItem);
+            // console.log("itemId"+itemId);
+            // console.log("nextItem"+nextItem);
+            // console.log("item"+nItem);
     
     
     
@@ -234,11 +236,9 @@ function playVideo(){
     
     
                     if(e.id === Number(nextItem.id) || flag===1){
-                        e.id=e.id-1;
-                        console.log(nItem);
-                        console.log("r"+e.id);
+                        e.id=e.id-1;                                 //changing id fro LS
                         nItem.id=e.id;
-                        nItem=nItem.nextSibling;
+                        nItem=nItem.nextSibling;                     //changing id in UI
                         flag=1;
                     }
                 })

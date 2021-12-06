@@ -419,9 +419,7 @@ $toggle-control-size: $toggle-height - ($toggle-gutter * 2);
 
 /* For Mobile */
   @media only screen and (max-width: 375px){
-
-  
-
+ 
     .btn-wide {
       margin-left: .8rem;
       width: 95%;
