@@ -124,10 +124,16 @@ function embedUrl(urlValue){
     let url;
 
     //like youtube or vimeo we can add more video site url we just need to design the logic a/c to its url.
-    
+
     if(urlValue.includes("youtube.com")){                     //youtube videos 
+
+        if(urlValue.includes("m.youtube.com")){               //for mobile
+            url=`https://m.youtube.com/embed/${urlValue.slice(31,len)}`;
+        }
+        else{                                                //for desktop
          url = urlValue.slice(0,24).concat(`embed/${urlValue.slice(32,len)}?autoplay=1&mute=1`);
-         console.log(url)
+         console.log(url);
+        }
     }
     else if(urlValue.includes("vimeo.com")){                              //vimeo videos
         url=`https://player.vimeo.com/video/${urlValue.slice(18,len)}`;
