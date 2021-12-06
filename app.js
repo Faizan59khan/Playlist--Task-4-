@@ -135,6 +135,10 @@ function embedUrl(urlValue){
          console.log(url);
         }
     }
+    else if(urlValue.includes("https://youtu.be")){
+        url = `https://www.youtube.com/embed/${urlValue.slice(17,len)}?autoplay=1&mute=1`;
+         console.log(url);
+    }
     else if(urlValue.includes("vimeo.com")){                              //vimeo videos
         url=`https://player.vimeo.com/video/${urlValue.slice(18,len)}`;
         console.log(url)
